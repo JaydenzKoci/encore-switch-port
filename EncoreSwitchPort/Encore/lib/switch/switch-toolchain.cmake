@@ -1,0 +1,5 @@
+set(CMAKE_SYSTEM_NAME NintendoSwitch)
+set(CMAKE_C_COMPILER /c/Users/jayde/EncoreSwitchPort/tools/devkitA64/bin/aarch64-none-elf-gcc.exe)
+set(CMAKE_CXX_COMPILER /c/Users/jayde/EncoreSwitchPort/tools/devkitA64/bin/aarch64-none-elf-g++.exe)
+set(CMAKE_FIND_ROOT_PATH /c/Users/jayde/EncoreSwitchPort/tools/portlibs/switch)
+set(CMAKE_MAKE_PROGRAM /c/Users/jayde/EncoreSwitchPort/tools/ninja.exe)
