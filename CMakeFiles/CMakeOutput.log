@@ -1,0 +1,425 @@
+The target system is: Generic -  - aarch64
+The host system is: Linux - 6.6.87.1-microsoft-standard-WSL2 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /opt/devkitpro/devkitA64/bin/aarch64-none-elf-gcc 
+Build flags: -g;-march=armv8-a+crc+crypto;-mtune=cortex-a57;-mtp=soft;-fPIE
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/mnt/c/Users/jayde/build-switch/CMakeFiles/3.22.1/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++ 
+Build flags: -g;-march=armv8-a+crc+crypto;-mtune=cortex-a57;-mtp=soft;-fPIE;-fno-exceptions;-fno-rtti
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/mnt/c/Users/jayde/build-switch/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /mnt/c/Users/jayde/build-switch/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_d834d && [1/2] Building C object CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj
+Using built-in specs.
+COLLECT_GCC=/opt/devkitpro/devkitA64/bin/aarch64-none-elf-gcc
+Target: aarch64-none-elf
+Configured with: ../../gcc-15.1.0/configure --enable-languages=c,c++,objc,lto --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv8 --enable-cxx-flags=-ffunction-sections --disable-libstdcxx-verbose --enable-poison-system-directories --enable-multilib --enable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --enable-libstdcxx-time --enable-libstdcxx-filesystem-ts --target=aarch64-none-elf --with-newlib=yes --with-headers=../../newlib-4.5.0.20241231/newlib/libc/include --prefix=/home/davem/projects/devkitpro/tool-packages/devkitA64/src/build/x86_64-linux-gnu/devkitA64 --enable-lto --disable-tm-clone-registry --disable-__cxa_atexit --with-bugurl=https://github.com/devkitPro/buildscripts/issues --with-pkgversion='devkitA64 release 28' --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --with-gmp= --with-mpfr= --with-mpc= --with-isl= --with-zstd= --with-gmp=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpfr=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpc=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-isl=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-zstd=/opt/devkitpro/crosstools/x86_64-linux-gnu
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 15.1.0 (devkitA64 release 28) 
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-v' '-o' 'CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_d834d.dir/'
+ /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/cc1 -quiet -v -imultilib pic -iprefix /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/ /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_d834d.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -mlittle-endian -mabi=lp64 -g -version -fPIE -o /tmp/ccjxfnju.s
+GNU C23 (devkitA64 release 28) version 15.1.0 (aarch64-none-elf)
+	compiled by GNU C version 10.2.1 20210110, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/sys-include"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/include"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/include-fixed"
+ignoring nonexistent directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/sys-include"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include-fixed
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include
+End of search list.
+Compiler executable checksum: 0a75c917f1544a61e8a706be9b74a614
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-v' '-o' 'CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_d834d.dir/'
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/as -v --gdwarf-5 -EL -march=armv8-a+crc+crypto -mabi=lp64 -o CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj /tmp/ccjxfnju.s
+GNU assembler version 2.44 (aarch64-none-elf) using BFD version (GNU Binutils) 2.44
+COMPILER_PATH=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../libexec/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/
+LIBRARY_PATH=/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../lib/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-v' '-o' 'CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.'
+[2/2] Linking C executable cmTC_d834d
+Using built-in specs.
+COLLECT_GCC=/opt/devkitpro/devkitA64/bin/aarch64-none-elf-gcc
+COLLECT_LTO_WRAPPER=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper
+Target: aarch64-none-elf
+Configured with: ../../gcc-15.1.0/configure --enable-languages=c,c++,objc,lto --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv8 --enable-cxx-flags=-ffunction-sections --disable-libstdcxx-verbose --enable-poison-system-directories --enable-multilib --enable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --enable-libstdcxx-time --enable-libstdcxx-filesystem-ts --target=aarch64-none-elf --with-newlib=yes --with-headers=../../newlib-4.5.0.20241231/newlib/libc/include --prefix=/home/davem/projects/devkitpro/tool-packages/devkitA64/src/build/x86_64-linux-gnu/devkitA64 --enable-lto --disable-tm-clone-registry --disable-__cxa_atexit --with-bugurl=https://github.com/devkitPro/buildscripts/issues --with-pkgversion='devkitA64 release 28' --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --with-gmp= --with-mpfr= --with-mpc= --with-isl= --with-zstd= --with-gmp=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpfr=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpc=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-isl=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-zstd=/opt/devkitpro/crosstools/x86_64-linux-gnu
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 15.1.0 (devkitA64 release 28) 
+COMPILER_PATH=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../libexec/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/
+LIBRARY_PATH=/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../lib/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-L/opt/devkitpro/libnx/lib' '-L/opt/devkitpro/portlibs/switch/lib' '-v' '-o' 'cmTC_d834d' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_d834d.'
+ /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/collect2 -plugin /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc10giP5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lsysbase -EL -X -maarch64elf -o cmTC_d834d /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o -L/opt/devkitpro/libnx/lib -L/opt/devkitpro/portlibs/switch/lib -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0 -L/opt/devkitpro/devkitA64/bin/../lib/gcc -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib -lnx CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lg -lc -lsysbase --end-group /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-L/opt/devkitpro/libnx/lib' '-L/opt/devkitpro/portlibs/switch/lib' '-v' '-o' 'cmTC_d834d' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_d834d.'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include]
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include-fixed]
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include]
+  end of search list found
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/include]
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include-fixed] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/include-fixed]
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/include]
+  implicit include dirs: [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/include;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/include-fixed;/opt/devkitpro/devkitA64/aarch64-none-elf/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(aarch64-none-elf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /mnt/c/Users/jayde/build-switch/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_d834d && [1/2] Building C object CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/devkitpro/devkitA64/bin/aarch64-none-elf-gcc]
+  ignore line: [Target: aarch64-none-elf]
+  ignore line: [Configured with: ../../gcc-15.1.0/configure --enable-languages=c,c++,objc,lto --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv8 --enable-cxx-flags=-ffunction-sections --disable-libstdcxx-verbose --enable-poison-system-directories --enable-multilib --enable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --enable-libstdcxx-time --enable-libstdcxx-filesystem-ts --target=aarch64-none-elf --with-newlib=yes --with-headers=../../newlib-4.5.0.20241231/newlib/libc/include --prefix=/home/davem/projects/devkitpro/tool-packages/devkitA64/src/build/x86_64-linux-gnu/devkitA64 --enable-lto --disable-tm-clone-registry --disable-__cxa_atexit --with-bugurl=https://github.com/devkitPro/buildscripts/issues --with-pkgversion='devkitA64 release 28' --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --with-gmp= --with-mpfr= --with-mpc= --with-isl= --with-zstd= --with-gmp=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpfr=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpc=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-isl=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-zstd=/opt/devkitpro/crosstools/x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 15.1.0 (devkitA64 release 28) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-v' '-o' 'CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_d834d.dir/']
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/cc1 -quiet -v -imultilib pic -iprefix /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/ /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_d834d.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -mlittle-endian -mabi=lp64 -g -version -fPIE -o /tmp/ccjxfnju.s]
+  ignore line: [GNU C23 (devkitA64 release 28) version 15.1.0 (aarch64-none-elf)]
+  ignore line: [	compiled by GNU C version 10.2.1 20210110  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/sys-include"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/include"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/sys-include"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include-fixed]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include]
+  ignore line: [End of search list.]
+  ignore line: [Compiler executable checksum: 0a75c917f1544a61e8a706be9b74a614]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-v' '-o' 'CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_d834d.dir/']
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/as -v --gdwarf-5 -EL -march=armv8-a+crc+crypto -mabi=lp64 -o CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj /tmp/ccjxfnju.s]
+  ignore line: [GNU assembler version 2.44 (aarch64-none-elf) using BFD version (GNU Binutils) 2.44]
+  ignore line: [COMPILER_PATH=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../libexec/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/]
+  ignore line: [LIBRARY_PATH=/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../lib/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-v' '-o' 'CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.']
+  ignore line: [[2/2] Linking C executable cmTC_d834d]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/devkitpro/devkitA64/bin/aarch64-none-elf-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper]
+  ignore line: [Target: aarch64-none-elf]
+  ignore line: [Configured with: ../../gcc-15.1.0/configure --enable-languages=c,c++,objc,lto --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv8 --enable-cxx-flags=-ffunction-sections --disable-libstdcxx-verbose --enable-poison-system-directories --enable-multilib --enable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --enable-libstdcxx-time --enable-libstdcxx-filesystem-ts --target=aarch64-none-elf --with-newlib=yes --with-headers=../../newlib-4.5.0.20241231/newlib/libc/include --prefix=/home/davem/projects/devkitpro/tool-packages/devkitA64/src/build/x86_64-linux-gnu/devkitA64 --enable-lto --disable-tm-clone-registry --disable-__cxa_atexit --with-bugurl=https://github.com/devkitPro/buildscripts/issues --with-pkgversion='devkitA64 release 28' --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --with-gmp= --with-mpfr= --with-mpc= --with-isl= --with-zstd= --with-gmp=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpfr=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpc=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-isl=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-zstd=/opt/devkitpro/crosstools/x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 15.1.0 (devkitA64 release 28) ]
+  ignore line: [COMPILER_PATH=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../libexec/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/]
+  ignore line: [LIBRARY_PATH=/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../lib/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-L/opt/devkitpro/libnx/lib' '-L/opt/devkitpro/portlibs/switch/lib' '-v' '-o' 'cmTC_d834d' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_d834d.']
+  link line: [ /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/collect2 -plugin /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc10giP5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lsysbase -EL -X -maarch64elf -o cmTC_d834d /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o -L/opt/devkitpro/libnx/lib -L/opt/devkitpro/portlibs/switch/lib -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0 -L/opt/devkitpro/devkitA64/bin/../lib/gcc -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib -lnx CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lg -lc -lsysbase --end-group /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o]
+    arg [/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc10giP5.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lg] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lsysbase] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-X] ==> ignore
+    arg [-maarch64elf] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_d834d] ==> ignore
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o]
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o]
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o]
+    arg [-L/opt/devkitpro/libnx/lib] ==> dir [/opt/devkitpro/libnx/lib]
+    arg [-L/opt/devkitpro/portlibs/switch/lib] ==> dir [/opt/devkitpro/portlibs/switch/lib]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib]
+    arg [-lnx] ==> lib [nx]
+    arg [CMakeFiles/cmTC_d834d.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [--start-group] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lg] ==> lib [g]
+    arg [-lc] ==> lib [c]
+    arg [-lsysbase] ==> lib [sysbase]
+    arg [--end-group] ==> ignore
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o]
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/lib/pic/crt0.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o]
+  collapse library dir [/opt/devkitpro/libnx/lib] ==> [/opt/devkitpro/libnx/lib]
+  collapse library dir [/opt/devkitpro/portlibs/switch/lib] ==> [/opt/devkitpro/portlibs/switch/lib]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/lib/pic]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc] ==> [/opt/devkitpro/devkitA64/lib/gcc]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/lib]
+  implicit libs: [nx;gcc;g;c;sysbase]
+  implicit objs: [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o;/opt/devkitpro/devkitA64/aarch64-none-elf/lib/pic/crt0.o;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o]
+  implicit dirs: [/opt/devkitpro/libnx/lib;/opt/devkitpro/portlibs/switch/lib;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic;/opt/devkitpro/devkitA64/aarch64-none-elf/lib/pic;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0;/opt/devkitpro/devkitA64/lib/gcc;/opt/devkitpro/devkitA64/aarch64-none-elf/lib]
+  implicit fwks: []
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /mnt/c/Users/jayde/build-switch/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_760fa && [1/2] Building CXX object CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj
+Using built-in specs.
+COLLECT_GCC=/opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++
+Target: aarch64-none-elf
+Configured with: ../../gcc-15.1.0/configure --enable-languages=c,c++,objc,lto --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv8 --enable-cxx-flags=-ffunction-sections --disable-libstdcxx-verbose --enable-poison-system-directories --enable-multilib --enable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --enable-libstdcxx-time --enable-libstdcxx-filesystem-ts --target=aarch64-none-elf --with-newlib=yes --with-headers=../../newlib-4.5.0.20241231/newlib/libc/include --prefix=/home/davem/projects/devkitpro/tool-packages/devkitA64/src/build/x86_64-linux-gnu/devkitA64 --enable-lto --disable-tm-clone-registry --disable-__cxa_atexit --with-bugurl=https://github.com/devkitPro/buildscripts/issues --with-pkgversion='devkitA64 release 28' --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --with-gmp= --with-mpfr= --with-mpc= --with-isl= --with-zstd= --with-gmp=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpfr=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpc=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-isl=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-zstd=/opt/devkitpro/crosstools/x86_64-linux-gnu
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 15.1.0 (devkitA64 release 28) 
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-v' '-o' 'CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_760fa.dir/'
+ /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/cc1plus -quiet -v -imultilib pic -iprefix /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_760fa.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -mlittle-endian -mabi=lp64 -g -version -fPIE -fno-exceptions -fno-rtti -o /tmp/ccNBlZ8w.s
+GNU C++17 (devkitA64 release 28) version 15.1.0 (aarch64-none-elf)
+	compiled by GNU C version 10.2.1 20210110, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/sys-include"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/aarch64-none-elf/pic"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/backward"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/include"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/include-fixed"
+ignoring nonexistent directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/sys-include"
+ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/aarch64-none-elf/pic
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/backward
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include-fixed
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include
+End of search list.
+Compiler executable checksum: c8e8d2b36a00c7accd6dd487f70df417
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-v' '-o' 'CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_760fa.dir/'
+ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/as -v --gdwarf-5 -EL -march=armv8-a+crc+crypto -mabi=lp64 -o CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccNBlZ8w.s
+GNU assembler version 2.44 (aarch64-none-elf) using BFD version (GNU Binutils) 2.44
+COMPILER_PATH=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../libexec/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/
+LIBRARY_PATH=/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../lib/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-v' '-o' 'CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.'
+[2/2] Linking CXX executable cmTC_760fa
+Using built-in specs.
+COLLECT_GCC=/opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++
+COLLECT_LTO_WRAPPER=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper
+Target: aarch64-none-elf
+Configured with: ../../gcc-15.1.0/configure --enable-languages=c,c++,objc,lto --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv8 --enable-cxx-flags=-ffunction-sections --disable-libstdcxx-verbose --enable-poison-system-directories --enable-multilib --enable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --enable-libstdcxx-time --enable-libstdcxx-filesystem-ts --target=aarch64-none-elf --with-newlib=yes --with-headers=../../newlib-4.5.0.20241231/newlib/libc/include --prefix=/home/davem/projects/devkitpro/tool-packages/devkitA64/src/build/x86_64-linux-gnu/devkitA64 --enable-lto --disable-tm-clone-registry --disable-__cxa_atexit --with-bugurl=https://github.com/devkitPro/buildscripts/issues --with-pkgversion='devkitA64 release 28' --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --with-gmp= --with-mpfr= --with-mpc= --with-isl= --with-zstd= --with-gmp=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpfr=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpc=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-isl=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-zstd=/opt/devkitpro/crosstools/x86_64-linux-gnu
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 15.1.0 (devkitA64 release 28) 
+COMPILER_PATH=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../libexec/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/
+LIBRARY_PATH=/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../lib/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-L/opt/devkitpro/libnx/lib' '-L/opt/devkitpro/portlibs/switch/lib' '-v' '-o' 'cmTC_760fa' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_760fa.'
+ /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/collect2 -plugin /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGOU9WC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lsysbase -EL -X -maarch64elf -o cmTC_760fa /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o -L/opt/devkitpro/libnx/lib -L/opt/devkitpro/portlibs/switch/lib -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0 -L/opt/devkitpro/devkitA64/bin/../lib/gcc -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib -lnx CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lg -lc -lsysbase --end-group /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o
+COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-L/opt/devkitpro/libnx/lib' '-L/opt/devkitpro/portlibs/switch/lib' '-v' '-o' 'cmTC_760fa' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_760fa.'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0]
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/aarch64-none-elf/pic]
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/backward]
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include]
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include-fixed]
+    add: [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include]
+  end of search list found
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/include/c++/15.1.0]
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/aarch64-none-elf/pic] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/include/c++/15.1.0/aarch64-none-elf/pic]
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/backward] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/include/c++/15.1.0/backward]
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/include]
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include-fixed] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/include-fixed]
+  collapse include dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/include]
+  implicit include dirs: [/opt/devkitpro/devkitA64/aarch64-none-elf/include/c++/15.1.0;/opt/devkitpro/devkitA64/aarch64-none-elf/include/c++/15.1.0/aarch64-none-elf/pic;/opt/devkitpro/devkitA64/aarch64-none-elf/include/c++/15.1.0/backward;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/include;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/include-fixed;/opt/devkitpro/devkitA64/aarch64-none-elf/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(aarch64-none-elf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /mnt/c/Users/jayde/build-switch/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_760fa && [1/2] Building CXX object CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++]
+  ignore line: [Target: aarch64-none-elf]
+  ignore line: [Configured with: ../../gcc-15.1.0/configure --enable-languages=c,c++,objc,lto --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv8 --enable-cxx-flags=-ffunction-sections --disable-libstdcxx-verbose --enable-poison-system-directories --enable-multilib --enable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --enable-libstdcxx-time --enable-libstdcxx-filesystem-ts --target=aarch64-none-elf --with-newlib=yes --with-headers=../../newlib-4.5.0.20241231/newlib/libc/include --prefix=/home/davem/projects/devkitpro/tool-packages/devkitA64/src/build/x86_64-linux-gnu/devkitA64 --enable-lto --disable-tm-clone-registry --disable-__cxa_atexit --with-bugurl=https://github.com/devkitPro/buildscripts/issues --with-pkgversion='devkitA64 release 28' --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --with-gmp= --with-mpfr= --with-mpc= --with-isl= --with-zstd= --with-gmp=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpfr=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpc=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-isl=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-zstd=/opt/devkitpro/crosstools/x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 15.1.0 (devkitA64 release 28) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-v' '-o' 'CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_760fa.dir/']
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/cc1plus -quiet -v -imultilib pic -iprefix /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_760fa.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -mlittle-endian -mabi=lp64 -g -version -fPIE -fno-exceptions -fno-rtti -o /tmp/ccNBlZ8w.s]
+  ignore line: [GNU C++17 (devkitA64 release 28) version 15.1.0 (aarch64-none-elf)]
+  ignore line: [	compiled by GNU C version 10.2.1 20210110  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/sys-include"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/aarch64-none-elf/pic"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/backward"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/include"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/sys-include"]
+  ignore line: [ignoring duplicate directory "/opt/devkitpro/devkitA64/bin/../lib/gcc/../../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/aarch64-none-elf/pic]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include/c++/15.1.0/backward]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/include-fixed]
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/include]
+  ignore line: [End of search list.]
+  ignore line: [Compiler executable checksum: c8e8d2b36a00c7accd6dd487f70df417]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-v' '-o' 'CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_760fa.dir/']
+  ignore line: [ /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/as -v --gdwarf-5 -EL -march=armv8-a+crc+crypto -mabi=lp64 -o CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccNBlZ8w.s]
+  ignore line: [GNU assembler version 2.44 (aarch64-none-elf) using BFD version (GNU Binutils) 2.44]
+  ignore line: [COMPILER_PATH=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../libexec/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/]
+  ignore line: [LIBRARY_PATH=/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../lib/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-v' '-o' 'CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [[2/2] Linking CXX executable cmTC_760fa]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper]
+  ignore line: [Target: aarch64-none-elf]
+  ignore line: [Configured with: ../../gcc-15.1.0/configure --enable-languages=c,c++,objc,lto --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv8 --enable-cxx-flags=-ffunction-sections --disable-libstdcxx-verbose --enable-poison-system-directories --enable-multilib --enable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --enable-libstdcxx-time --enable-libstdcxx-filesystem-ts --target=aarch64-none-elf --with-newlib=yes --with-headers=../../newlib-4.5.0.20241231/newlib/libc/include --prefix=/home/davem/projects/devkitpro/tool-packages/devkitA64/src/build/x86_64-linux-gnu/devkitA64 --enable-lto --disable-tm-clone-registry --disable-__cxa_atexit --with-bugurl=https://github.com/devkitPro/buildscripts/issues --with-pkgversion='devkitA64 release 28' --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --with-gmp= --with-mpfr= --with-mpc= --with-isl= --with-zstd= --with-gmp=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpfr=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-mpc=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-isl=/opt/devkitpro/crosstools/x86_64-linux-gnu --with-zstd=/opt/devkitpro/crosstools/x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 15.1.0 (devkitA64 release 28) ]
+  ignore line: [COMPILER_PATH=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../libexec/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/bin/]
+  ignore line: [LIBRARY_PATH=/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/:/opt/devkitpro/devkitA64/bin/../lib/gcc/:/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-march=armv8-a+crc+crypto' '-mtune=cortex-a57' '-mtp=soft' '-fPIE' '-fno-exceptions' '-fno-rtti' '-L/opt/devkitpro/libnx/lib' '-L/opt/devkitpro/portlibs/switch/lib' '-v' '-o' 'cmTC_760fa' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_760fa.']
+  link line: [ /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/collect2 -plugin /opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/liblto_plugin.so -plugin-opt=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGOU9WC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lsysbase -EL -X -maarch64elf -o cmTC_760fa /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o -L/opt/devkitpro/libnx/lib -L/opt/devkitpro/portlibs/switch/lib -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0 -L/opt/devkitpro/devkitA64/bin/../lib/gcc -L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib -lnx CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lg -lc -lsysbase --end-group /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o /opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o]
+    arg [/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/opt/devkitpro/devkitA64/bin/../libexec/gcc/aarch64-none-elf/15.1.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccGOU9WC.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lg] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lsysbase] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-X] ==> ignore
+    arg [-maarch64elf] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_760fa] ==> ignore
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o]
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o]
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o]
+    arg [-L/opt/devkitpro/libnx/lib] ==> dir [/opt/devkitpro/libnx/lib]
+    arg [-L/opt/devkitpro/portlibs/switch/lib] ==> dir [/opt/devkitpro/portlibs/switch/lib]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc]
+    arg [-L/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib] ==> dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib]
+    arg [-lnx] ==> lib [nx]
+    arg [CMakeFiles/cmTC_760fa.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [--start-group] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lg] ==> lib [g]
+    arg [-lc] ==> lib [c]
+    arg [-lsysbase] ==> lib [sysbase]
+    arg [--end-group] ==> ignore
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o]
+    arg [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o] ==> obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic/crt0.o] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/lib/pic/crt0.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o]
+  collapse obj [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o]
+  collapse library dir [/opt/devkitpro/libnx/lib] ==> [/opt/devkitpro/libnx/lib]
+  collapse library dir [/opt/devkitpro/portlibs/switch/lib] ==> [/opt/devkitpro/portlibs/switch/lib]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/pic] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib/pic] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/lib/pic]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0] ==> [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc] ==> [/opt/devkitpro/devkitA64/lib/gcc]
+  collapse library dir [/opt/devkitpro/devkitA64/bin/../lib/gcc/aarch64-none-elf/15.1.0/../../../../aarch64-none-elf/lib] ==> [/opt/devkitpro/devkitA64/aarch64-none-elf/lib]
+  implicit libs: [nx;stdc++;m;gcc;g;c;sysbase]
+  implicit objs: [/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crti.o;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtbegin.o;/opt/devkitpro/devkitA64/aarch64-none-elf/lib/pic/crt0.o;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtend.o;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic/crtn.o]
+  implicit dirs: [/opt/devkitpro/libnx/lib;/opt/devkitpro/portlibs/switch/lib;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0/pic;/opt/devkitpro/devkitA64/aarch64-none-elf/lib/pic;/opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/15.1.0;/opt/devkitpro/devkitA64/lib/gcc;/opt/devkitpro/devkitA64/aarch64-none-elf/lib]
+  implicit fwks: []
+
+
+Performing C SOURCE FILE Test COMPILER_HAS_THOSE_TOGGLES succeeded with the following output:
+Change Dir: /mnt/c/Users/jayde/build-switch/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_8191b && [1/2] Building C object CMakeFiles/cmTC_8191b.dir/src.c.obj
+[2/2] Linking C executable cmTC_8191b
+
+
+Source file was:
+int main(void) { return 0; }
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /mnt/c/Users/jayde/build-switch/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_fe178 && [1/2] Building C object CMakeFiles/cmTC_fe178.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_fe178
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /mnt/c/Users/jayde/build-switch/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6f71f && [1/2] Building C object CMakeFiles/cmTC_6f71f.dir/src.c.obj
+[2/2] Linking C executable cmTC_6f71f
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

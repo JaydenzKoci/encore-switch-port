@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/mnt/c/Users/jayde/build-switch/build-switch",
+  "command": "/opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++ -DENCORE_VERSION=\\\"1.0.0\\\" -DGIT_COMMIT_HASH=\\\"\\\" -DPLATFORM_NX -DSUPPORT_FILEFORMAT_JPG -I/mnt/c/Users/jayde/build-switch/raylib-nx/src -I/opt/devkitpro/libnx/include -I/opt/devkitpro/portlibs/switch/include -I/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/include -I/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src -I/mnt/c/Users/jayde/build-switch/deps/nlohmann_json/include -g -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE -fno-exceptions -fno-rtti -std=gnu++20 -o Encore/CMakeFiles/Encore.dir/src/assets.cpp.obj -c /mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src/assets.cpp",
+  "file": "/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src/assets.cpp"
+},
+{
+  "directory": "/mnt/c/Users/jayde/build-switch/build-switch",
+  "command": "/opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++ -DENCORE_VERSION=\\\"1.0.0\\\" -DGIT_COMMIT_HASH=\\\"\\\" -DPLATFORM_NX -DSUPPORT_FILEFORMAT_JPG -I/mnt/c/Users/jayde/build-switch/raylib-nx/src -I/opt/devkitpro/libnx/include -I/opt/devkitpro/portlibs/switch/include -I/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/include -I/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src -I/mnt/c/Users/jayde/build-switch/deps/nlohmann_json/include -g -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE -fno-exceptions -fno-rtti -std=gnu++20 -o Encore/CMakeFiles/Encore.dir/src/main.cpp.obj -c /mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src/main.cpp",
+  "file": "/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src/main.cpp"
+},
+{
+  "directory": "/mnt/c/Users/jayde/build-switch/build-switch",
+  "command": "/opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++ -DENCORE_VERSION=\\\"1.0.0\\\" -DGIT_COMMIT_HASH=\\\"\\\" -DPLATFORM_NX -DSUPPORT_FILEFORMAT_JPG -I/mnt/c/Users/jayde/build-switch/raylib-nx/src -I/opt/devkitpro/libnx/include -I/opt/devkitpro/portlibs/switch/include -I/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/include -I/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src -I/mnt/c/Users/jayde/build-switch/deps/nlohmann_json/include -g -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE -fno-exceptions -fno-rtti -std=gnu++20 -o Encore/CMakeFiles/Encore.dir/src/settings.cpp.obj -c /mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src/settings.cpp",
+  "file": "/mnt/c/Users/jayde/build-switch/EncoreSwitchPort/Encore/src/settings.cpp"
+}
+]
