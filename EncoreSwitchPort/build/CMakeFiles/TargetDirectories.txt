@@ -1,0 +1,5 @@
+/home/jayde/EncoreSwitchPort/build/CMakeFiles/edit_cache.dir
+/home/jayde/EncoreSwitchPort/build/CMakeFiles/rebuild_cache.dir
+/home/jayde/EncoreSwitchPort/build/Encore/CMakeFiles/Encore.dir
+/home/jayde/EncoreSwitchPort/build/Encore/CMakeFiles/edit_cache.dir
+/home/jayde/EncoreSwitchPort/build/Encore/CMakeFiles/rebuild_cache.dir

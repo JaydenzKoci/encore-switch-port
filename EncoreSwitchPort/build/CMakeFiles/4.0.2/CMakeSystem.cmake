@@ -1,0 +1,15 @@
+set(CMAKE_HOST_SYSTEM "MSYS-3.6.2-a9cfe9f5.x86_64")
+set(CMAKE_HOST_SYSTEM_NAME "MSYS")
+set(CMAKE_HOST_SYSTEM_VERSION "3.6.2-a9cfe9f5.x86_64")
+set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
+
+include("/home/jayde/EncoreSwitchPort/toolchain.cmake")
+
+set(CMAKE_SYSTEM "Generic")
+set(CMAKE_SYSTEM_NAME "Generic")
+set(CMAKE_SYSTEM_VERSION "")
+set(CMAKE_SYSTEM_PROCESSOR "aarch64")
+
+set(CMAKE_CROSSCOMPILING "TRUE")
+
+set(CMAKE_SYSTEM_LOADED 1)
