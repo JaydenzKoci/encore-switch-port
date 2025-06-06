@@ -51,28 +51,25 @@ ICON 		:=  icon.jpg
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH	:=	-march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
-
-CFLAGS	:=	-g -Wall -O2 -ffunction-sections \
-            $(ARCH) $(DEFINES)
-
-CFLAGS	+=	$(INCLUDE) -D__SWITCH__
-
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
-
-ASFLAGS	:=	-g $(ARCH)
-LDFLAGS	:=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
-
-LIBS	:=	-lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
-
+ARCH    := -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
+CFLAGS  := -g -Wall -O2 -ffunction-sections $(ARCH) $(DEFINES) $(INCLUDE) -D__SWITCH__
+CXXFLAGS:= $(CFLAGS) -fno-rtti -fno-exceptions
+ASFLAGS := -g $(ARCH)
+LDFLAGS := -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+INCLUDE := -I$(CURDIR)/../raylib-nx/src -I$(CURDIR)/../raylib-nx/src/switch-nx \
+           $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
+           $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
+           -I$(CURDIR)/$(BUILD) -I$(LIBNX)/include
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:= $(PORTLIBS) $(LIBNX)
-LIBNX := /opt/devkitpro/libnx
-PORTLIBS := /opt/devkitpro/portlibs/switch
+LIBS    := -lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
+LIBNX   := /opt/devkitpro/libnx
+PORTLIBS:= /opt/devkitpro/portlibs/switch
 RAYLIB_PATH := $(CURDIR)/../raylib-nx/cmake-build-switch/raylib
+LIBDIRS := $(PORTLIBS) $(LIBNX) $(RAYLIB_PATH)
+LIBPATHS:= -L$(RAYLIB_PATH) -L$(LIBNX)/lib -L$(PORTLIBS)/lib
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
 # rules for different file extensions
@@ -80,20 +77,27 @@ RAYLIB_PATH := $(CURDIR)/../raylib-nx/cmake-build-switch/raylib
 ifneq ($(BUILD),$(notdir $(CURDIR)))
 #---------------------------------------------------------------------------------
 
-export OUTPUT	:=	$(CURDIR)/$(TARGET)
-export TOPDIR	:=	$(CURDIR)
+export OUTPUT := $(CURDIR)/$(TARGET)
+export TOPDIR := $(CURDIR)
+export VPATH  := $(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
+                 $(foreach dir,$(DATA),$(CURDIR)/$(dir))
+export DEPSDIR:= $(CURDIR)/$(BUILD)
 
-export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
-            $(foreach dir,$(DATA),$(CURDIR)/$(dir))
+CFILES      := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
+CPPFILES    := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
+SFILES      := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
+BINFILES    := $(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
 
-export DEPSDIR	:=	$(CURDIR)/$(BUILD)
+export OFILES_BIN := $(addsuffix .o,$(BINFILES))
+export OFILES_SRC := $(CPPFILES:.cpp=.o) $(CFILES:.c=.o) $(SFILES:.s=.o)
+export OFILES     := $(OFILES_BIN) $(OFILES_SRC)
+export HFILES_BIN := $(addsuffix .h,$(subst .,_,$(BINFILES)))
 
-CFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
-CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
-SFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
-BINFILES	:=	$(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
-
-CFILES		:=	$(filter-out textures_logo_raylib.c,$(CFILES))
+export APP_ICON := $(TOPDIR)/$(ICON)
+export NROFLAGS := --icon=$(APP_ICON) --nacp=$(CURDIR)/$(TARGET).nacp
+ifneq ($(ROMFS),)
+    export NROFLAGS += --romfsdir=$(CURDIR)/$(ROMFS)
+endif
 
 #---------------------------------------------------------------------------------
 # use CXX for linking C++ projects
