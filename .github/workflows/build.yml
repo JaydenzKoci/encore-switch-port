@@ -15,6 +15,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Install Dependencies
+        run: |
+          dkp-pacman -Syy --noconfirm
+          dkp-pacman -S --noconfirm switch-cmake switch-tools switch-portlibs
+          which nacptool || { echo "nacptool not found"; exit 1; }
+
       - name: Set Environment
         run: |
           echo "DEVKITPRO=/opt/devkitpro" >> $GITHUB_ENV
@@ -28,8 +34,18 @@ jobs:
           which aarch64-none-elf-gcc
           which make
           which cmake
+          which nacptool
           sed -i '/posix_module.c/d' raylib-nx/src/external/glfw/CMakeLists.txt || true
           grep -v "posix_module.c" raylib-nx/src/external/glfw/CMakeLists.txt
+
+      - name: Patch GLFW CMakeLists
+        run: |
+          if grep -q "posix_module.c" raylib-nx/src/external/glfw/CMakeLists.txt; then
+            sed -i '/posix_module.c/d' raylib-nx/src/external/glfw/CMakeLists.txt
+            echo "Removed posix_module.c from GLFW CMakeLists.txt"
+          else
+            echo "posix_module.c not found in GLFW CMakeLists.txt"
+          fi
 
       - name: Build raylib-nx
         run: |
@@ -49,7 +65,9 @@ jobs:
           cp icon.jpg switch-game/icon.jpg
           cd switch-game
           make clean
-          make
+          make > make.log 2>&1 || { cat make.log; exit 1; }
+          ls switch-game.nacp || { echo "switch-game.nacp not found"; exit 1; }
+          ls switch-game.nro || { echo "switch-game.nro not found"; exit 1; }
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
@@ -57,3 +75,4 @@ jobs:
           name: switch-game-artifacts
           path: |
             switch-game/switch-game.nro
+            switch-game/switch-game.nacp

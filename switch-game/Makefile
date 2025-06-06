@@ -6,7 +6,6 @@ ifeq ($(strip $(DEVKITPRO)),)
 $(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>/devkitpro")
 endif
 
-TOPDIR ?= $(CURDIR)
 include $(DEVKITPRO)/libnx/switch_rules
 
 #---------------------------------------------------------------------------------
@@ -56,10 +55,7 @@ CFLAGS  := -g -Wall -O2 -ffunction-sections $(ARCH) $(DEFINES) $(INCLUDE) -D__SW
 CXXFLAGS:= $(CFLAGS) -fno-rtti -fno-exceptions
 ASFLAGS := -g $(ARCH)
 LDFLAGS := -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
-INCLUDE := -I$(CURDIR)/../raylib-nx/src -I$(CURDIR)/../raylib-nx/src/switch-nx \
-           $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
-           $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
-           -I$(CURDIR)/$(BUILD) -I$(LIBNX)/include
+
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
@@ -67,9 +63,14 @@ INCLUDE := -I$(CURDIR)/../raylib-nx/src -I$(CURDIR)/../raylib-nx/src/switch-nx \
 LIBS    := -lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
 LIBNX   := /opt/devkitpro/libnx
 PORTLIBS:= /opt/devkitpro/portlibs/switch
-RAYLIB_PATH := $(CURDIR)/../raylib-nx/cmake-build-switch/raylib
+RAYLIB_PATH := /opt/devkitpro
 LIBDIRS := $(PORTLIBS) $(LIBNX) $(RAYLIB_PATH)
 LIBPATHS:= -L$(RAYLIB_PATH) -L$(LIBNX)/lib -L$(PORTLIBS)/lib
+INCLUDE := -I$(CURDIR)/../raylib-nx/src -I$(CURDIR)/../raylib-nx/src/switch-nx \
+           $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
+           $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
+           -I$(CURDIR)/$(BUILD) -I$(LIBNX)/include
+
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
 # rules for different file extensions
@@ -109,22 +110,21 @@ export OFILES_SRC	:=	$(CPPFILES:.cpp=.o) $(CFILES:.c=.o) $(SFILES:.s=.o)
 export OFILES		:=	$(OFILES_BIN) $(OFILES_SRC)
 export HFILES_BIN	:=	$(addsuffix .h,$(subst .,_,$(BINFILES)))
 
-export LIBPATHS := -L$(RAYLIB_PATH) -L$(LIBNX)/lib -L$(PORTLIBS)/lib
+export INCLUDE	:=	-I/home/raylib-nx/src -I/home/raylib-nx/src/switch-nx \
+            $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
+            $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
+            -I$(CURDIR)/$(BUILD) -I/devkitpro/libnx/include
 
-export INCLUDE := -I$(CURDIR)/../raylib-nx/src -I$(CURDIR)/../raylib-nx/src/switch-nx \
-                  $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
-                  $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
-                  -I$(CURDIR)/$(BUILD) -I$(LIBNX)/include
-
-LIBDIRS := $(PORTLIBS) $(LIBNX) $(RAYLIB_PATH)
+LIBDIRS := $(PORTLIBS) $(LIBNX)
 ifeq ($(strip $(NO_NACP)),)
     export NROFLAGS += --nacp=$(CURDIR)/$(TARGET).nacp
 endif
 ifeq ($(strip $(APP_JSON)),)
-    all : $(OUTPUT).nro
+all : $(OUTPUT).nro
 else
-    all : $(OUTPUT).nsp
+all : $(OUTPUT).nsp
 endif
+
 ifeq ($(strip $(CONFIG_JSON)),)
     jsons := $(wildcard *.json)
     ifneq (,$(findstring $(TARGET).json,$(jsons)))
@@ -195,29 +195,15 @@ DEPENDS	:=	$(OFILES:.o=.d)
 #---------------------------------------------------------------------------------
 # main targets
 #---------------------------------------------------------------------------------
-ifeq ($(strip $(APP_JSON)),)
+DEPENDS := $(OFILES:.o=.d)
 
-all	:	$(OUTPUT).nro
+all: $(OUTPUT).nro
 
-ifeq ($(strip $(NO_NACP)),)
-$(OUTPUT).nro	:	$(OUTPUT).elf $(OUTPUT).nacp
-else
-$(OUTPUT).nro	:	$(OUTPUT).elf
-endif
+$(OUTPUT).nro: $(OUTPUT).elf $(OUTPUT).nacp
 
-else
+$(OUTPUT).elf: $(OFILES)
 
-all	:	$(OUTPUT).nsp
-
-$(OUTPUT).nsp	:	$(OUTPUT).nso $(OUTPUT).npdm
-
-$(OUTPUT).nso	:	$(OUTPUT).elf
-
-endif
-
-$(OUTPUT).elf	:	$(OFILES)
-
-$(OFILES_SRC)	:	$(HFILES_BIN)
+$(OFILES_SRC): $(HFILES_BIN)
 
 #---------------------------------------------------------------------------------
 # you need a rule like this for each extension you use as binary data
