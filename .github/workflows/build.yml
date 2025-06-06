@@ -15,6 +15,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Install Dependencies
+        run: |
+          dkp-pacman -Syy --noconfirm
+          dkp-pacman -S --noconfirm switch-cmake switch-tools
+
       - name: Set Environment
         run: |
           echo "DEVKITPRO=/opt/devkitpro" >> $GITHUB_ENV
@@ -28,23 +33,29 @@ jobs:
           which aarch64-none-elf-gcc
           which make
           which cmake
+          sed -i '/posix_module.c/d' raylib-nx/src/external/glfw/CMakeLists.txt || true
+          grep -v "posix_module.c" raylib-nx/src/external/glfw/CMakeLists.txt
 
       - name: Build raylib-nx
         run: |
           cd raylib-nx
           mkdir -p cmake-build-switch
           cd cmake-build-switch
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/Switch.cmake -DBUILD_EXAMPLES=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/switch.cmake \
+                   -DBUILD_EXAMPLES=OFF \
+                   -DPLATFORM=Switch \
+                   -DGLFW_BUILD_POSIX=OFF \
+                   -D_GLFW_NX=ON
           make
           ls raylib/libraylib.a
 
       - name: Build Switch Game
         run: |
+          cp icon.jpg switch-game/icon.jpg
           cd switch-game
           make clean
           make
-          cp icon.jpg switch-game/icon.jpg
-
+          
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
