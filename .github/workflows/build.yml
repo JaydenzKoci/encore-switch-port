@@ -36,7 +36,7 @@ jobs:
           cd raylib-nx
           mkdir -p cmake-build-switch
           cd cmake-build-switch
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/switch.cmake \
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/Switch.cmake \
                    -DBUILD_EXAMPLES=OFF \
                    -DPLATFORM=Switch \
                    -DGLFW_BUILD_POSIX=OFF \
