@@ -22,11 +22,16 @@ jobs:
           pacman-key --init
           pacman-key --populate archlinux
           # Install devkitPro pacman repository
-          curl -L https://pkg.devkitpro.org/devkitpro-keyring.pkg.tar.zst -o devkitpro-pacman.pkg.tar.zst
-          pacman -U --noconfirm devkitpro-pacman.pkg.tar.zst
-          # Install Switch dependencies
+          curl -L https://apt.devkitpro.org/install-devkitpro-pacman -o install-devkitpro-pacman
+          chmod +x install-devkitpro-pacman
+          ./install-devkitpro-pacman
+          # Ensure devkitPro repository in pacman.conf
+          echo -e "\n[dkp-libs]\nServer = http://pkg.devkitpro.org/packages\nSigLevel = Optional TrustAll\n" >> /etc/pacman.conf
+          echo -e "[dkp-linux]\nServer = http://pkg.devkitpro.org/packages\nSigLevel = Optional TrustAll\n" >> /etc/pacman.conf
+          # Sync repositories
           pacman -Syy --noconfirm
-          pacman -S --noconfirm switch-libnx switch-portlibs switch-cmake devkitA64
+          # Install Switch dependencies
+          pacman -S --noconfirm switch-dev
 
       - name: Set Environment
         run: |
