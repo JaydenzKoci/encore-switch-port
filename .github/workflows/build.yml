@@ -10,26 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: archlinux:base-devel
+      image: devkitpro/devkita64:latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Install Dependencies
-        run: |
-          pacman -Syy --noconfirm
-          pacman -S --noconfirm base-devel sudo git make cmake zstd archlinux-keyring wget
-          pacman-key --init
-          pacman-key --populate archlinux
-          pacman -Scc --noconfirm
-          pacman-key --recv BC26F752D25B92CE272E0F44F7FD5492264BB9D0
-          echo -e "\n[dkp-libs]\nServer = https://pkg.devkitpro.org/packages\nSigLevel = Optional TrustAll\n" >> /etc/pacman.conf
-          echo -e "[dkp-linux]\nServer = https://pkg.devkitpro.org/packages/linux/$arch\nSigLevel = Optional TrustAll\n" >> /etc/pacman.conf
-          curl -I https://downloads.devkitpro.org/packages/dkp-libs.db || { echo "Repository inaccessible"; exit 1; }
-          pacman -Syy --noconfirm
-          wget https://downloads.devkitpro.org/devkitpro-keyring.pkg.tar.xz
-          pacman -U --noconfirm devkitpro-keyring.pkg.tar.xz
-          pacman -S --noconfirm switch-dev
 
       - name: Set Environment
         run: |
@@ -40,9 +24,10 @@ jobs:
 
       - name: Verify Toolchain
         run: |
-          ls /opt/devkitpro/switch.cmake
+          ls /opt/devkitpro/switch.cmake || { echo "switch.cmake not found"; exit 1; }
           which aarch64-none-elf-gcc
           which make
+          which cmake
 
       - name: Build raylib-nx
         run: |
@@ -55,10 +40,10 @@ jobs:
 
       - name: Build Switch Game
         run: |
-          cp icon.jpg switch-game/icon.jpg
           cd switch-game
           make clean
           make
+          cp icon.jpg switch-game/icon.jpg
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
