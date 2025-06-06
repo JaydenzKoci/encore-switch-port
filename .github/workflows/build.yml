@@ -15,6 +15,25 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Fix pacman and Install Dependencies
+        run: |
+          rm -f /var/lib/pacman/db.lck
+          pacman -Syy --noconfirm
+          pacman -S --noconfirm switch-libnx switch-portlibs switch-hacpack switch-cmake devkitA64 git make cmake
+
+      - name: Set devkitPro Environment
+        run: |
+          echo "DEVKITPRO=/opt/devkitpro" >> $GITHUB_ENV
+          echo "DEVKITARM=/opt/devkitpro/devkitARM" >> $GITHUB_ENV
+          echo "DEVKITA64=/opt/devkitpro/devkitA64" >> $GITHUB_ENV
+          echo "/opt/devkitpro/devkitA64/bin" >> $GITHUB_PATH
+
+      - name: Verify Toolchain
+        run: |
+          ls /opt/devkitpro/switch.cmake
+          which aarch64-none-elf-gcc
+          which make
+
       - name: Build raylib-nx
         run: |
           cd raylib-nx
