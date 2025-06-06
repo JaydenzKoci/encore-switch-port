@@ -172,14 +172,9 @@ endif
 #---------------------------------------------------------------------------------
 all: $(BUILD)
 
-$(OUTPUT).nacp:
-    @echo creating nacp...
-    @nacptool --create "$(APP_TITLE)" "$(APP_AUTHOR)" "$(APP_VERSION)" $(OUTPUT).nacp
-
-$(BUILD): $(OUTPUT).nacp
-    @[ -d $@ ] || mkdir -p $@
-    @echo LIBPATHS: $(LIBPATHS)
-    @$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+$(BUILD):
+	@[ -d $@ ] || mkdir -p $@
+	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
 #---------------------------------------------------------------------------------
 clean:
@@ -207,8 +202,6 @@ all: $(OUTPUT).nro
 $(OUTPUT).nro: $(OUTPUT).elf $(OUTPUT).nacp
 
 $(OUTPUT).elf: $(OFILES)
-    @echo Linking with LIBPATHS: $(LIBPATHS)
-    $(LD) $(LDFLAGS) $(LIBPATHS) $(OFILES) $(LIBS) -o $@
 
 $(OFILES_SRC): $(HFILES_BIN)
 
