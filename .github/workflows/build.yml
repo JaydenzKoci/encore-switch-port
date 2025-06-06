@@ -18,16 +18,14 @@ jobs:
       - name: Install Dependencies
         run: |
           pacman -Syy --noconfirm
-          pacman -S --noconfirm base-devel sudo git make cmake zstd archlinux-keyring
+          pacman -S --noconfirm base-devel sudo git make cmake zstd archlinux-keyring wget
           pacman-key --init
           pacman-key --populate archlinux
-          # Install devkitPro pacman repository
-          curl -L https://apt.devkitpro.org/install-devkitpro-pacman -o install-devkitpro-pacman
-          chmod +x install-devkitpro-pacman
-          ./install-devkitpro-pacman
-          # Ensure devkitPro repository in pacman.conf
-          echo -e "\n[dkp-libs]\nServer = http://pkg.devkitpro.org/packages\nSigLevel = Optional TrustAll\n" >> /etc/pacman.conf
-          echo -e "[dkp-linux]\nServer = http://pkg.devkitpro.org/packages\nSigLevel = Optional TrustAll\n" >> /etc/pacman.conf
+          # Import devkitPro GPG key
+          pacman-key --recv BC26F752D25B92CE272E0F44F7FD5492264BB9D0
+          # Add devkitPro repository to pacman.conf
+          echo -e "\n[dkp-libs]\nServer = https://downloads.devkitpro.org/packages\nSigLevel = Optional TrustAll\n" >> /etc/pacman.conf
+          echo -e "[dkp-linux]\nServer = https://downloads.devkitpro.org/packages\nSigLevel = Optional TrustAll\n" >> /etc/pacman.conf
           # Sync repositories
           pacman -Syy --noconfirm
           # Install Switch dependencies
