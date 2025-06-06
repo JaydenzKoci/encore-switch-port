@@ -50,9 +50,12 @@ jobs:
                    -DBUILD_EXAMPLES=OFF \
                    -DPLATFORM=NX \
                    -DGLFW_BUILD_POSIX=OFF \
-                   -D_GLFW_NX=ON
-          make
-          ls raylib/libraylib.a
+                   -D_GLFW_NX=ON > cmake.log 2>&1 || { cat cmake.log; exit 1; }
+          make > make.log 2>&1 || { cat make.log; exit 1; }
+          ls -R . || { echo "Failed to list raylib-nx build directory"; exit 1; }
+          ls raylib/libraylib.a || { echo "libraylib.a not found"; exit 1; }
+          cp raylib/libraylib.a /tmp/libraylib.a
+          ls /tmp/libraylib.a
 
       - name: Build Switch Game
         run: |

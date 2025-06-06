@@ -63,7 +63,7 @@ LDFLAGS := -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $
 LIBS    := -lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
 LIBNX   := /opt/devkitpro/libnx
 PORTLIBS:= /opt/devkitpro/portlibs/switch
-RAYLIB_PATH := /opt/devkitpro
+RAYLIB_PATH := $(TOPDIR)/../raylib-nx/cmake-build-switch/raylib
 LIBDIRS := $(PORTLIBS) $(LIBNX) $(RAYLIB_PATH)
 LIBPATHS:= -L$(RAYLIB_PATH) -L$(LIBNX)/lib -L$(PORTLIBS)/lib
 INCLUDE := -I$(CURDIR)/../raylib-nx/src -I$(CURDIR)/../raylib-nx/src/switch-nx \
@@ -172,9 +172,14 @@ endif
 #---------------------------------------------------------------------------------
 all: $(BUILD)
 
-$(BUILD):
-	@[ -d $@ ] || mkdir -p $@
-	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+$(OUTPUT).nacp:
+    @echo creating nacp...
+    @nacptool --create "$(APP_TITLE)" "$(APP_AUTHOR)" "$(APP_VERSION)" $(OUTPUT).nacp
+
+$(BUILD): $(OUTPUT).nacp
+    @[ -d $@ ] || mkdir -p $@
+    @echo LIBPATHS: $(LIBPATHS)
+    @$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
 #---------------------------------------------------------------------------------
 clean:
@@ -202,6 +207,8 @@ all: $(OUTPUT).nro
 $(OUTPUT).nro: $(OUTPUT).elf $(OUTPUT).nacp
 
 $(OUTPUT).elf: $(OFILES)
+    @echo Linking with LIBPATHS: $(LIBPATHS)
+    $(LD) $(LDFLAGS) $(LIBPATHS) $(OFILES) $(LIBS) -o $@
 
 $(OFILES_SRC): $(HFILES_BIN)
 
