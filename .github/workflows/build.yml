@@ -15,12 +15,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Fix pacman
-        run: |
-          rm -f /var/lib/pacman/db.lck
-          pacman -Syy --noconfirm
-          pacman -S --noconfirm switch-libnx switch-portlibs switch-hacpack git make cmake
-
       - name: Build raylib-nx
         run: |
           cd raylib-nx
