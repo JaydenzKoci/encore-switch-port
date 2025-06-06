@@ -10,16 +10,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: devkitpro/devkita64:latest
+      image: archlinux:base-devel
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Fix pacman and Install Dependencies
+      - name: Install pacman and devkitPro Dependencies
         run: |
-          rm -f /var/lib/pacman/db.lck
           pacman -Syy --noconfirm
-          pacman -S --noconfirm switch-libnx switch-portlibs switch-hacpack switch-cmake devkitA64 git make cmake
+          pacman -S --noconfirm base-devel sudo git make cmake
+          # Install devkitPro pacman repository
+          curl -L https://pkg.devkitpro.org/devkitpro-pacman.pkg.tar.zst -o devkitpro-pacman.pkg.tar.zst
+          pacman -U --noconfirm devkitpro-pacman.pkg.tar.zst
+          # Install Switch dependencies
+          pacman -Syy --noconfirm
+          pacman -S --noconfirm switch-libnx switch-portlibs switch-cmake devkitA64
 
       - name: Set devkitPro Environment
         run: |
@@ -53,24 +58,9 @@ jobs:
           make clean
           make
 
-      - name: Generate NSP
-        run: |
-          cd switch-game
-          mkdir -p exefs
-          cp switch-game.nso exefs/main
-          npdmtool config.json exefs/main.npdm
-          if [ -f /home/keys.dat ]; then
-            hacpack --type nsp --exefsdir=exefs --romfsdir=romfs --titleid=0100DEAD00000000 \
-                    --title="Encore" --author="Jaydenz" --version="1.0.0" --outdir=. \
-                    --keyset=/home/keys.dat
-          else
-            echo "keys.dat not found, skipping NSP generation"
-          fi
-
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: switch-game-artifacts
           path: |
             switch-game/switch-game.nro
-            switch-game/switch-game.nsp
