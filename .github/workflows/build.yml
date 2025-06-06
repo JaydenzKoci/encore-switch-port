@@ -24,7 +24,7 @@ jobs:
 
       - name: Verify Toolchain
         run: |
-          ls /opt/devkitpro/switch.cmake || { echo "switch.cmake not found"; exit 1; }
+          ls /opt/devkitpro/cmake/Switch.cmake || { echo "switch.cmake not found"; exit 1; }
           which aarch64-none-elf-gcc
           which make
           which cmake
