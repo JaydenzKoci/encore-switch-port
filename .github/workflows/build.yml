@@ -38,7 +38,7 @@ jobs:
           cd cmake-build-switch
           cmake .. -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/Switch.cmake \
                    -DBUILD_EXAMPLES=OFF \
-                   -DPLATFORM=Switch \
+                   -DPLATFORM=NX \
                    -DGLFW_BUILD_POSIX=OFF \
                    -D_GLFW_NX=ON
           make
