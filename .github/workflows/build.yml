@@ -22,7 +22,7 @@ jobs:
           pacman-key --init
           pacman-key --populate archlinux
           # Install devkitPro pacman repository
-          curl -L https://pkg.devkitpro.org/devkitpro-pacman.pkg.tar.zst -o devkitpro-pacman.pkg.tar.zst
+          curl -L https://pkg.devkitpro.org/devkitpro-keyring.pkg.tar.zst -o devkitpro-pacman.pkg.tar.zst
           pacman -U --noconfirm devkitpro-pacman.pkg.tar.zst
           # Install Switch dependencies
           pacman -Syy --noconfirm
