@@ -1,5 +1,0 @@
-/mnt/c/Users/jayde/build-switch/build-switch/CMakeFiles/edit_cache.dir
-/mnt/c/Users/jayde/build-switch/build-switch/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/jayde/build-switch/build-switch/Encore/CMakeFiles/Encore.dir
-/mnt/c/Users/jayde/build-switch/build-switch/Encore/CMakeFiles/edit_cache.dir
-/mnt/c/Users/jayde/build-switch/build-switch/Encore/CMakeFiles/rebuild_cache.dir

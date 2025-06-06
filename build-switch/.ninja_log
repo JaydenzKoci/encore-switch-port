@@ -1,6 +1,0 @@
-# ninja log v5
-11	15628	1749135452551430700	build.ninja	27d600431998f8e2
-204	1710	1749134463553644700	Encore/CMakeFiles/Encore.dir/src/assets.cpp.obj	c80916b6d7cf7161
-210	8924	1749134468843728600	Encore/CMakeFiles/Encore.dir/src/settings.cpp.obj	2bcb5657204ca4d5
-209	1723	1749135454499434700	Encore/CMakeFiles/Encore.dir/src/assets.cpp.obj	c80916b6d7cf7161
-215	7056	1749135460227794900	Encore/CMakeFiles/Encore.dir/src/settings.cpp.obj	2bcb5657204ca4d5

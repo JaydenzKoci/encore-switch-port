@@ -1,0 +1,63 @@
+name: Nintendo Switch Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkita64:latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Fix pacman
+        run: |
+          rm -f /var/lib/pacman/db.lck
+          pacman -Syy --noconfirm
+          pacman -S --noconfirm switch-libnx switch-portlibs switch-hacpack git make cmake
+
+      - name: Build raylib-nx
+        run: |
+          cd raylib-nx
+          mkdir -p cmake-build-switch
+          cd cmake-build-switch
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/switch.cmake -DBUILD_EXAMPLES=OFF
+          make
+          ls raylib/libraylib.a
+
+      - name: Copy icon.jpg
+        run: |
+          cp icon.jpg switch-game/icon.jpg
+
+      - name: Build Switch Game
+        run: |
+          cd switch-game
+          make clean
+          make
+
+      - name: Generate NSP
+        run: |
+          cd switch-game
+          mkdir -p exefs
+          cp switch-game.nso exefs/main
+          npdmtool config.json exefs/main.npdm
+          if [ -f /home/keys.dat ]; then
+            hacpack --type nsp --exefsdir=exefs --romfsdir=romfs --titleid=0100DEAD00000000 \
+                    --title="Encore" --author="Jaydenz" --version="1.0.0" --outdir=. \
+                    --keyset=/home/keys.dat
+          else
+            echo "keys.dat not found, skipping NSP generation"
+          fi
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: switch-game-artifacts
+          path: |
+            switch-game/switch-game.nro
+            switch-game/switch-game.nsp

@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/jayde/EncoreSwitchPort/build/cmake_install.cmake",
-		"/home/jayde/EncoreSwitchPort/build/Encore/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
