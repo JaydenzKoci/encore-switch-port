@@ -15,10 +15,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install pacman and devkitPro Dependencies
+      - name: Install Dependencies
         run: |
           pacman -Syy --noconfirm
-          pacman -S --noconfirm base-devel sudo git make cmake
+          pacman -S --noconfirm base-devel sudo git make cmake zstd archlinux-keyring
+          pacman-key --init
+          pacman-key --populate archlinux
           # Install devkitPro pacman repository
           curl -L https://pkg.devkitpro.org/devkitpro-pacman.pkg.tar.zst -o devkitpro-pacman.pkg.tar.zst
           pacman -U --noconfirm devkitpro-pacman.pkg.tar.zst
@@ -26,7 +28,7 @@ jobs:
           pacman -Syy --noconfirm
           pacman -S --noconfirm switch-libnx switch-portlibs switch-cmake devkitA64
 
-      - name: Set devkitPro Environment
+      - name: Set Environment
         run: |
           echo "DEVKITPRO=/opt/devkitpro" >> $GITHUB_ENV
           echo "DEVKITARM=/opt/devkitpro/devkitARM" >> $GITHUB_ENV
@@ -48,12 +50,9 @@ jobs:
           make
           ls raylib/libraylib.a
 
-      - name: Copy icon.jpg
-        run: |
-          cp icon.jpg switch-game/icon.jpg
-
       - name: Build Switch Game
         run: |
+          cp icon.jpg switch-game/icon.jpg
           cd switch-game
           make clean
           make
