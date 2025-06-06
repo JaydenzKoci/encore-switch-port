@@ -15,12 +15,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: |
-          dkp-pacman -Syy --noconfirm
-          dkp-pacman -S --noconfirm switch-cmake switch-tools switch-portlibs
-          which nacptool || { echo "nacptool not found"; exit 1; }
-
       - name: Set Environment
         run: |
           echo "DEVKITPRO=/opt/devkitpro" >> $GITHUB_ENV
