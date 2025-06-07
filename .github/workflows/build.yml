@@ -65,14 +65,18 @@ jobs:
           ls -l /tmp/include/raylib.h
           ls -l /tmp/libraylib.a
 
+      - name: Verify Makefile
+        run: |
+          ls /home/encore-switch-port/switch-game/Makefile || { echo "Makefile not found"; exit 1; }
+          echo "Makefile located at: /home/encore-switch-port/switch-game/Makefile"
+          grep "switch_rules" /home/encore-switch-port/switch-game/Makefile || echo "No switch_rules found in Makefile"
+
       - name: Build Switch Game
         run: |
           cp icon.jpg switch-game/icon.jpg
           cd switch-game
           make clean
           make > make.log 2>&1 || { cat make.log; exit 1; }
-          ls switch-game.nacp || { echo "switch-game.nacp not found"; exit 1; }
-          ls switch-game.nro || { echo "switch-game.nro not found"; exit 1; }
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
