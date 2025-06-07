@@ -64,7 +64,7 @@ LIBS        := -lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
 LIBNX       := $(DEVKITPRO)/libnx
 PORTLIBS    := $(DEVKITPRO)/portlibs/switch
 RAYLIB_NX_PATH := /home/raylib-nx/cmake-build-switch/raylib
-RAYLIB_NX_INCLUDE := /home/raylib-nx/src
+RAYLIB_NX_INCLUDE := /home/raylib-nx/cmake-build-switch/raylib/include
 
 LIBDIRS     := $(PORTLIBS) $(LIBNX)
 LIBPATHS    := -L$(RAYLIB_NX_PATH) -L$(LIBNX)/lib -L$(PORTLIBS)/lib
@@ -72,6 +72,8 @@ INCLUDE     := -I$(RAYLIB_NX_INCLUDE) \
                $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
                $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
                -I$(CURDIR)/$(BUILD) -I$(LIBNX)/include
+PORTLIBS_PATH := $(DEVKITPRO)/portlibs
+PATH          := $(PORTLIBS_PATH)/switch/bin:$(PATH)
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
 # rules for different file extensions

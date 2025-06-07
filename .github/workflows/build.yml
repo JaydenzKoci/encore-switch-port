@@ -72,4 +72,5 @@ jobs:
           name: switch-game-artifacts
           path: |
             switch-game/switch-game.nro
+            switch-game/switch-game.elf
             switch-game/switch-game.nacp
