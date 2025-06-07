@@ -64,7 +64,7 @@ LIBS        := -lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
 LIBNX       := $(DEVKITPRO)/libnx
 PORTLIBS    := $(DEVKITPRO)/portlibs/switch
 RAYLIB_NX_PATH := /tmp
-RAYLIB_NX_INCLUDE := /home/raylib-nx/cmake-build-switch/raylib/include
+RAYLIB_NX_INCLUDE := /raylib-nx/cmake-build-switch/raylib/include
 
 LIBDIRS     := $(PORTLIBS) $(LIBNX)
 LIBPATHS    := -L$(RAYLIB_NX_PATH) -L$(LIBNX)/lib -L$(PORTLIBS)/lib

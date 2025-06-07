@@ -57,12 +57,6 @@ jobs:
           cp raylib/libraylib.a /tmp/libraylib.a
           ls /tmp/libraylib.a
 
-      - name: Info
-        run: |
-          ls -l raylib-nx
-          ls -l /tmp/libraylib.a
-          ls -lraylib /cmake-build-switch/raylib/include/raylib.h
-
       - name: Build Switch Game
         run: |
           cp icon.jpg switch-game/icon.jpg
