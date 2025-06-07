@@ -60,17 +60,18 @@ LDFLAGS := -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBS    := -lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
-LIBNX   := /opt/devkitpro/libnx
-PORTLIBS:= /opt/devkitpro/portlibs/switch
-RAYLIB_PATH := $(TOPDIR)/../raylib-nx/cmake-build-switch/raylib
-LIBDIRS := $(PORTLIBS) $(LIBNX) $(RAYLIB_PATH)
-LIBPATHS:= -L$(RAYLIB_PATH) -L$(LIBNX)/lib -L$(PORTLIBS)/lib
-INCLUDE := -I$(CURDIR)/../raylib-nx/src -I$(CURDIR)/../raylib-nx/src/switch-nx \
-           $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
-           $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
-           -I$(CURDIR)/$(BUILD) -I$(LIBNX)/include
+LIBS        := -lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
+LIBNX       := $(DEVKITPRO)/libnx
+PORTLIBS    := $(DEVKITPRO)/portlibs/switch
+RAYLIB_NX_PATH := /home/raylib-nx/cmake-build-switch/raylib
+RAYLIB_NX_INCLUDE := /home/raylib-nx/src
 
+LIBDIRS     := $(PORTLIBS) $(LIBNX)
+LIBPATHS    := -L$(RAYLIB_NX_PATH) -L$(LIBNX)/lib -L$(PORTLIBS)/lib
+INCLUDE     := -I$(RAYLIB_NX_INCLUDE) \
+               $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
+               $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
+               -I$(CURDIR)/$(BUILD) -I$(LIBNX)/include
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
 # rules for different file extensions
