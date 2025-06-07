@@ -54,8 +54,16 @@ jobs:
           make > make.log 2>&1 || { cat make.log; exit 1; }
           ls -R . || { echo "Failed to list raylib-nx build directory"; exit 1; }
           ls raylib/libraylib.a || { echo "libraylib.a not found"; exit 1; }
+          echo "libraylib.a located at: $(pwd)/raylib/libraylib.a"
+          ls raylib/include/raylib.h || { echo "raylib.h not found"; exit 1; }
+          echo "raylib.h located at: $(pwd)/raylib/include/raylib.h"
           cp raylib/libraylib.a /tmp/libraylib.a
-          ls /tmp/libraylib.a
+          echo "libraylib.a copied to: /tmp/libraylib.a"
+          mkdir -p /tmp/include
+          cp -r raylib/include/* /tmp/include/
+          echo "raylib/include copied to: /tmp/include"
+          ls -l /tmp/include/raylib.h
+          ls -l /tmp/libraylib.a
 
       - name: Build Switch Game
         run: |
