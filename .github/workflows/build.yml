@@ -59,10 +59,10 @@ jobs:
 
       - name: Info
         run: |
-          ls -l /home/raylib-nx
+          ls -l raylib-nx
           ls -l /tmp/libraylib.a
-          ls -lraylib /home/nx/cmake-build-switch/raylib/include/raylib.h
-          
+          ls -lraylib /cmake-build-switch/raylib/include/raylib.h
+
       - name: Build Switch Game
         run: |
           cp icon.jpg switch-game/icon.jpg
