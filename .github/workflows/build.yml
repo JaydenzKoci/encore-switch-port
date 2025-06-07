@@ -75,6 +75,8 @@ jobs:
         run: |
           cp icon.jpg switch-game/icon.jpg
           cd switch-game
+          make clean
+          make
           make
 
       - name: Upload Artifacts
