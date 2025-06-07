@@ -63,7 +63,7 @@ LDFLAGS := -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $
 LIBS        := -lraylib -lEGL -lGLESv2 -lglapi -ldrm_nouveau -lnx -lm
 LIBNX       := $(DEVKITPRO)/libnx
 PORTLIBS    := $(DEVKITPRO)/portlibs/switch
-RAYLIB_NX_PATH := /home/raylib-nx/cmake-build-switch/raylib
+RAYLIB_NX_PATH := /tmp
 RAYLIB_NX_INCLUDE := /home/raylib-nx/cmake-build-switch/raylib/include
 
 LIBDIRS     := $(PORTLIBS) $(LIBNX)

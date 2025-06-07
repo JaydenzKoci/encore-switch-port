@@ -11,15 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: devkitpro/devkita64:latest
-    env:
-      DEVKITPRO: /opt/devkitpro
-      DEVKITARM: /opt/devkitpro/devkitARM
-      DEVKITA64: /opt/devkitpro/devkitA64
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          path: encore-switch-port
+
+      - name: Set Environment
+        run: |
+          echo "DEVKITPRO=/opt/devkitpro" >> $GITHUB_ENV
+          echo "DEVKITARM=/opt/devkitpro/devkitARM" >> $GITHUB_ENV
+          echo "DEVKITA64=/opt/devkitpro/devkitA64" >> $GITHUB_ENV
+          echo "/opt/devkitpro/devkitA64/bin" >> $GITHUB_PATH
 
       - name: Verify Toolchain
         run: |
@@ -58,8 +59,8 @@ jobs:
 
       - name: Build Switch Game
         run: |
-          cp /home/encore-switch-port/icon.jpg /home/encore-switch-port/switch-game/icon.jpg
-          cd /home/encore-switch-port/switch-game
+          cp icon.jpg switch-game/icon.jpg
+          cd switch-game
           make clean
           make > make.log 2>&1 || { cat make.log; exit 1; }
           ls switch-game.nacp || { echo "switch-game.nacp not found"; exit 1; }
@@ -70,6 +71,6 @@ jobs:
         with:
           name: switch-game-artifacts
           path: |
-            /home/encore-switch-port/switch-game/switch-game.nro
-            /home/encore-switch-port/switch-game/switch-game.elf
-            /home/encore-switch-port/switch-game/switch-game.nacp
+            switch-game/switch-game.nro
+            switch-game/switch-game.elf
+            switch-game/switch-game.nacp
