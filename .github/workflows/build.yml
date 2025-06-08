@@ -43,6 +43,7 @@ jobs:
 
       - name: Build raylib-nx
         run: |
+          git clone https://github.com/luizpestana/raylib-nx
           cd raylib-nx
           mkdir -p cmake-build-switch
           cd cmake-build-switch
