@@ -110,64 +110,55 @@ export LD	:=	$(CXX)
 
 export OFILES_BIN	:=	$(addsuffix .o,$(BINFILES))
 export OFILES_SRC	:=	$(CPPFILES:.cpp=.o) $(CFILES:.c=.o) $(SFILES:.s=.o)
-export OFILES		:=	$(OFILES_BIN) $(OFILES_SRC)
+export OFILES 	:=	$(OFILES_BIN) $(OFILES_SRC)
 export HFILES_BIN	:=	$(addsuffix .h,$(subst .,_,$(BINFILES)))
 
-export INCLUDE	:=	-I/home/raylib-nx/src -I/home/raylib-nx/src/switch-nx \
-            $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
-            $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
-            -I$(CURDIR)/$(BUILD) -I/devkitpro/libnx/include
+export INCLUDE	:=	-I$(RAYLIB_NX)/src -I$(RAYLIB_NX)/src/switch-nx $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
+			$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
+			-I$(CURDIR)/$(BUILD)
 
-LIBDIRS := $(PORTLIBS) $(LIBNX)
-ifeq ($(strip $(NO_NACP)),)
-    export NROFLAGS += --nacp=$(CURDIR)/$(TARGET).nacp
-endif
-ifeq ($(strip $(APP_JSON)),)
-all : $(OUTPUT).nro
-else
-all : $(OUTPUT).nsp
-endif
+export LIBPATHS	:=	-L$(RAYLIB_NX)/src -L$(RAYLIB_NX)/src/switch-nx $(foreach dir,$(LIBDIRS),-L$(dir)/lib)
 
 ifeq ($(strip $(CONFIG_JSON)),)
-    jsons := $(wildcard *.json)
-    ifneq (,$(findstring $(TARGET).json,$(jsons)))
-        export APP_JSON := $(TOPDIR)/$(TARGET).json
-    else
-        ifneq (,$(findstring config.json,$(jsons)))
-            export APP_JSON := $(TOPDIR)/config.json
-        endif
-    endif
+	jsons := $(wildcard *.json)
+	ifneq (,$(findstring $(TARGET).json,$(jsons)))
+		export APP_JSON := $(TOPDIR)/$(TARGET).json
+	else
+		ifneq (,$(findstring config.json,$(jsons)))
+			export APP_JSON := $(TOPDIR)/config.json
+		endif
+	endif
 else
-    export APP_JSON := $(TOPDIR)/$(CONFIG_JSON)
+	export APP_JSON := $(TOPDIR)/$(CONFIG_JSON)
 endif
 
 ifeq ($(strip $(ICON)),)
-    icons := $(wildcard *.jpg)
-    ifneq (,$(findstring $(TARGET).jpg,$(icons)))
-        export APP_ICON := $(TOPDIR)/$(TARGET).jpg
-    else
-        ifneq (,$(findstring icon.jpg,$(icons)))
-            export APP_ICON := $(TOPDIR)/icon.jpg
-        endif
-    endif
+	icons := $(wildcard *.jpg)
+	ifneq (,$(findstring $(TARGET).jpg,$(icons)))
+		export APP_ICON := $(TOPDIR)/$(TARGET).jpg
+	else
+		ifneq (,$(findstring icon.jpg,$(icons)))
+			export APP_ICON := $(TOPDIR)/icon.jpg
+		endif
+	endif
 else
-    export APP_ICON := $(TOPDIR)/$(ICON)
+	export APP_ICON := $(TOPDIR)/$(ICON)
 endif
 
 ifeq ($(strip $(NO_ICON)),)
-    export NROFLAGS += --icon=$(APP_ICON)
+	export NROFLAGS += --icon=$(APP_ICON)
 endif
 
 ifeq ($(strip $(NO_NACP)),)
-    export NROFLAGS += --nacp=$(CURDIR)/$(TARGET).nacp
+	export NROFLAGS += --nacp=$(CURDIR)/$(TARGET).nacp
 endif
 
 ifneq ($(APP_TITLEID),)
-    export NACPFLAGS += --titleid=$(APP_TITLEID)
+	export NACPFLAGS += --titleid=$(APP_TITLEID)
 endif
 
 ifneq ($(ROMFS),)
-    export NROFLAGS += --romfsdir=$(CURDIR)/$(ROMFS)
+	export NROFLAGS += --romfsdir=$(CURDIR)/$(ROMFS)
 endif
 
 .PHONY: $(BUILD) clean all
