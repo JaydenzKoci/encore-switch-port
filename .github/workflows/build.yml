@@ -29,17 +29,6 @@ jobs:
           which make
           which cmake
           which nacptool
-          sed -i '/posix_module.c/d' raylib-nx/src/external/glfw/CMakeLists.txt || true
-          grep -v "posix_module.c" raylib-nx/src/external/glfw/CMakeLists.txt
-
-      - name: Patch GLFW CMakeLists
-        run: |
-          if grep -q "posix_module.c" raylib-nx/src/external/glfw/CMakeLists.txt; then
-            sed -i '/posix_module.c/d' raylib-nx/src/external/glfw/CMakeLists.txt
-            echo "Removed posix_module.c from GLFW CMakeLists.txt"
-          else
-            echo "posix_module.c not found in GLFW CMakeLists.txt"
-          fi
 
       - name: Build raylib-nx
         run: |
@@ -65,6 +54,15 @@ jobs:
           echo "raylib/include copied to: /tmp/include"
           ls -l /tmp/include/raylib.h
           ls -l /tmp/libraylib.a
+
+      - name: Patch CMakeLists
+        run: |
+          if grep -q "posix_module.c" raylib-nx/src/external/glfw/CMakeLists.txt; then
+            sed -i '/posix_module.c/d' raylib-nx/src/external/glfw/CMakeLists.txt
+            echo "Removed posix_module.c from GLFW CMakeLists.txt"
+          else
+            echo "posix_module.c not found in GLFW CMakeLists.txt"
+          fi
 
       - name: Verify Makefile
         run: |
