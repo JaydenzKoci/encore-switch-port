@@ -77,7 +77,7 @@ jobs:
           timeout_minutes: 1
           max_attempts: 3
           command: |
-            cp icon.jpg switch-game/icon.jpg
+            cp icon.jpg Encore/icon.jpg
             cd Encore
             make
 
