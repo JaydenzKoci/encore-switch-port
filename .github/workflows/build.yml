@@ -71,7 +71,7 @@ jobs:
           echo "Makefile located at: switch-game/Makefile"
           grep "switch_rules" switch-game/Makefile || echo "No switch_rules found in Makefile"
 
-      - name: Build .elf File
+      - name: Build Switch Game
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 1
@@ -80,14 +80,6 @@ jobs:
             cp icon.jpg switch-game/icon.jpg
             cd switch-game
             make
-
-      - name: Build .elf File
-        run: |
-          cp icon.jpg switch-game/icon.jpg
-          cd switch-game
-          make clean
-          make
-          make
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
