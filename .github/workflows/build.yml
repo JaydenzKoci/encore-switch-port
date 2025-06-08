@@ -78,7 +78,7 @@ jobs:
           max_attempts: 3
           command: |
             cp icon.jpg switch-game/icon.jpg
-            cd encore
+            cd Encore
             make
 
       - name: Upload Artifacts
