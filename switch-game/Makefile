@@ -36,7 +36,7 @@ include $(DEVKITPRO)/libnx/switch_rules
 #   of a homebrew executable (.nro). This is intended to be used for sysmodules.
 #   NACP building is skipped as well.
 #---------------------------------------------------------------------------------
-TARGET		:=	switch-game
+TARGET		:=	encore
 BUILD		:=	build
 SOURCES		:=	source
 DATA		:=	data

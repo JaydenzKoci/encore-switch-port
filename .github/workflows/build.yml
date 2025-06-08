@@ -78,7 +78,7 @@ jobs:
           max_attempts: 3
           command: |
             cp icon.jpg switch-game/icon.jpg
-            cd switch-game
+            cd encore
             make
 
       - name: Upload Artifacts
@@ -86,6 +86,6 @@ jobs:
         with:
           name: switch-game-artifacts
           path: |
-            switch-game/switch-game.nro
-            switch-game/switch-game.elf
-            switch-game/switch-game.nacp
+            switch-game/encore.nro
+            switch-game/encore.elf
+            switch-game/encore.nacp
