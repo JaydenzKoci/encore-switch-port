@@ -46,7 +46,7 @@ APP_TITLE	:=	Encore
 APP_AUTHOR	:=	Jaydenz
 APP_VERSION	:=	1.0.0
 CONFIG_JSON :=  config.json
-ICON 		:=  icon.jpg
+ICON 		:=  Encore.jpg
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
