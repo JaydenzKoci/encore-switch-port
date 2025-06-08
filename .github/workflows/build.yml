@@ -86,6 +86,6 @@ jobs:
         with:
           name: switch-game-artifacts
           path: |
-            Encore/encore.nro
-            Encore/encore.elf
-            Encore/encore.nacp
+            Encore/Encore.nro
+            Encore/Encore.elf
+            Encore/Encore.nacp
