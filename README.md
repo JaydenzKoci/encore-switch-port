@@ -23,11 +23,6 @@ Please check [CHARTS.md](https://github.com/Encore-Developers/Encore/blob/main/C
 - backing.ogg (or similar)
 - notes.mid (typically named after the song's name)
 
-### Contributing
-
-If you have any bugs or suggestions for Encore, please consider making an issue.
-For code contributions, you'll need the latest version of Visual Studio or CLion. It's possible that you can use VSCode, but none of us develop with it. These IDEs should install the C++ development toolchains.
-
 ## Credits    
 Crown icon from [Font Awesome](https://fontawesome.com/) (icon source: [crown](https://fontawesome.com/icons/crown?f=classic&s=solid))
 
